@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="e.flashcard.view_controller.BuilderController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="saveMenu" mnemonicParsing="false" onAction="#handleSaveCard" text="Save" />
+                  <MenuItem fx:id="newMenu" mnemonicParsing="false" onAction="#handleNewCard" text="New" />
             </items>
           </Menu>
         </menus>
@@ -26,10 +26,10 @@
       <AnchorPane prefHeight="472.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="265.0" layoutY="4.0" text="Question" AnchorPane.topAnchor="4.0" />
-            <TextArea layoutX="36.0" layoutY="35.0" prefHeight="150.0" prefWidth="524.0" promptText="Enter question" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+            <TextArea fx:id="questionTextArea" layoutX="36.0" layoutY="35.0" prefHeight="150.0" prefWidth="524.0" promptText="Enter question" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
             <Label layoutX="276.0" layoutY="193.0" text="Answer" />
-            <TextArea layoutX="30.0" layoutY="224.0" prefHeight="150.0" prefWidth="200.0" promptText="Enter answer" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
-            <Button layoutX="257.0" layoutY="398.0" mnemonicParsing="false" text="Next Card" />
+            <TextArea fx:id="answerTextArea" layoutX="30.0" layoutY="224.0" prefHeight="150.0" prefWidth="200.0" promptText="Enter answer" wrapText="true" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+            <Button fx:id="nextCardButton" layoutX="257.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleNextCard" text="Next Card" />
          </children>
       </AnchorPane>
    </bottom>
