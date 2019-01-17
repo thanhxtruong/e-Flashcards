@@ -5,6 +5,7 @@
  */
 package e.flashcard;
 
+import e.flashcard.model.CardList;
 import e.flashcard.view_controller.BuilderController;
 import java.io.IOException;
 import javafx.application.Application;
@@ -21,6 +22,12 @@ public class MainApp extends Application {
     
     private Stage primaryStage;
     private BorderPane rootLayout;
+    
+    private CardList cardList = new CardList();
+    
+    public CardList getCardListClass() {
+        return cardList;
+    }
     
     @Override
     public void start(Stage primaryStage) {
