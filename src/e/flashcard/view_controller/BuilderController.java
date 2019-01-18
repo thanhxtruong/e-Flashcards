@@ -34,18 +34,13 @@ public class BuilderController implements Initializable {
 
     @FXML
     private MenuItem newMenu;
-
+    @FXML
     private TextArea questionTextArea;
-
+    @FXML
     private TextArea answerTextArea;
-
-        
+                
     private MainApp mainApp;
     private Stage dialogStage;
-    @FXML
-    private TextArea playerTextArea;
-    @FXML
-    private Button playerButton;
     
     @FXML
     void handleNewCard(ActionEvent event) {
@@ -55,6 +50,7 @@ public class BuilderController implements Initializable {
         // TO DO: Add alert to confirm saving current list before creating new one
     }
 
+    @FXML
     void handleNextCard(ActionEvent event) {
         QuizCard card = new QuizCard(questionTextArea.getText(), answerTextArea.getText());
         mainApp.getCardListClass().addCard(card);
@@ -67,7 +63,7 @@ public class BuilderController implements Initializable {
         mainApp.getCardListClass().addCard(card);
         
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Card List");
+        fileChooser.setTitle("Save File");
         File file = fileChooser.showSaveDialog(dialogStage);
         if (file != null) {
             saveFile(file);

@@ -7,7 +7,6 @@ package e.flashcard.model;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javax.smartcardio.Card;
 
 /**
  *
